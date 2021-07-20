@@ -15,22 +15,11 @@ public class Employer extends AbstractEntity {
     @Size(max = 50, message = "Entry is too long.")
     private String location;
 
-
     @OneToMany
     @JoinColumn(name = "employer_id")
-    private final List<Job> jobs = new ArrayList<>();
+    private List<Job> jobs = new ArrayList<>();
 
-    public Employer() {
-    }
-
-    public Employer(String location) {
-        super();
-        this.location = location;
-    }
-
-    public List<Job> getJobs() {
-        return jobs;
-    }
+    public Employer() {}
 
     public String getLocation() {
         return location;
